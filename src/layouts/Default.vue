@@ -27,11 +27,6 @@
               >
             </li>
             <li class="nav-item">
-              <g-link class="nav-link px-lg-3 py-3 py-lg-4" to="/post"
-                >Sample Post</g-link
-              >
-            </li>
-            <li class="nav-item">
               <g-link class="nav-link px-lg-3 py-3 py-lg-4" to="/contact"
                 >Contact</g-link
               >

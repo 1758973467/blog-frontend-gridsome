@@ -6,7 +6,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
             <div class="site-heading">
-              <h1># {{ $page.tags.attributes.title }}</h1>
+              <h1># {{ $page.strapiTags.attributes.title }}</h1>
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
           <!-- Post preview-->
           <div
             class="post-preview"
-            v-for="post in $page.tags.attributes.posts.data"
+            v-for="post in $page.strapiTags.attributes.posts.data"
             :key="post.id"
           >
             <g-link :to="'/posts/' + post.id">
@@ -43,7 +43,7 @@
 
 <page-query>
 query($id: ID!){
-  tags:strapiTags(id: $id){
+  strapiTags(id: $id){
     id
     attributes{
       title

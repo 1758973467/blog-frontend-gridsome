@@ -19,16 +19,12 @@ module.exports = {
     {
       use: 'gridsome-source-strapi-v4',
       options: {
-        apiURL: `${process.env.STRAPI_SERVER_BASE_URL}/api/`,
+        apiURL: `${process.env.GRIDSOME_STRAPI_SERVER_BASE_URL}/api/`,
         queryLimit: 1000, // Defaults to 100
         contentTypes: ['posts', 'tags'],
         singleTypes: ['general'],
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
-        // loginData: {
-        //   identifier: '1758973467@qq.com',
-        //   password: '123456'
-        // }
       }
     }
   ],

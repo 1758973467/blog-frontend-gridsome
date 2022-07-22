@@ -4,7 +4,7 @@
     <header
       class="masthead"
       :style="{
-        backgroundImage: `url(${process.env.STRAPI_SERVER_BASE_URL}${$page.strapiPosts.attributes.cover.data.attributes.url})`,
+        backgroundImage: `url(${GRIDSOME_STRAPI_SERVER_BASE_URL}${$page.strapiPosts.attributes.cover.data.attributes.url})`,
       }"
     >
       <div class="container position-relative px-4 px-lg-5">
@@ -70,12 +70,18 @@ query($id: ID!){
 <script>
 import MarkDownIt from "markdown-it";
 const md = new MarkDownIt();
+const GRIDSOME_STRAPI_SERVER_BASE_URL =
+  process.env.GRIDSOME_STRAPI_SERVER_BASE_URL;
 export default {
   name: "PostPage",
   metaInfo: {
     title: "post",
   },
-  computed: {},
+  computed: {
+    GRIDSOME_STRAPI_SERVER_BASE_URL() {
+      return GRIDSOME_STRAPI_SERVER_BASE_URL;
+    },
+  },
   methods: {
     mdToHtml(mdDoc) {
       return md.render(mdDoc);

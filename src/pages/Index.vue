@@ -4,7 +4,7 @@
     <header
       class="masthead"
       :style="{
-        backgroundImage: `url(${process.env.STRAPI_SERVER_BASE_URL}${general.attributes.cover.data.attributes.url})`,
+        backgroundImage: `url(${GRIDSOME_STRAPI_SERVER_BASE_URL}${general.attributes.cover.data.attributes.url})`,
       }"
     >
       <div class="container position-relative px-4 px-lg-5">
@@ -113,6 +113,8 @@ query($page:Int){
 
 </page-query>
 <script>
+const GRIDSOME_STRAPI_SERVER_BASE_URL =
+  process.env.GRIDSOME_STRAPI_SERVER_BASE_URL;
 import { Pager } from "gridsome";
 export default {
   name: "HomePage",
@@ -125,6 +127,9 @@ export default {
   computed: {
     general() {
       return this.$page.allStrapiGeneral.edges[0].node.data;
+    },
+    GRIDSOME_STRAPI_SERVER_BASE_URL() {
+      return GRIDSOME_STRAPI_SERVER_BASE_URL;
     },
   },
 };
