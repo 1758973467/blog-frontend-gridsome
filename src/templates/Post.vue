@@ -4,7 +4,7 @@
     <header
       class="masthead"
       :style="{
-        backgroundImage: `url(http://localhost:1337${$page.strapiPosts.attributes.cover.data.attributes.url})`,
+        backgroundImage: `url(${process.env.STRAPI_SERVER_BASE_URL}${$page.strapiPosts.attributes.cover.data.attributes.url})`,
       }"
     >
       <div class="container position-relative px-4 px-lg-5">
