@@ -16,5 +16,6 @@
     "gridsome-source-strapi-v4": "^0.2.0",
     "markdown-it": "^13.0.1",
     "@popperjs/core":"^2.10.2"
-  }
+  },
+ "engines": { "node": "18.x" }
 }
